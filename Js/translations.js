@@ -37,7 +37,7 @@ const translations = {
     // Reliability Section
     reliability: "Reliability",
     reliabilityText:
-      "Our reputation is built on trust. We deliver on time, within budget, and always with integrity. Clients rely on Debruyne Construct for results that endure — structurally and professionally.",
+      "Our reputation is built on trust. We deliver on time, within budget, and always with integrity. Clients rely on Debruyne Construct for results that endure, structurally and professionally.",
 
     // Footer
     contactFooter: "Contact",
@@ -63,7 +63,7 @@ const translations = {
     // Intro Section
     introTitle: "Over Debruyne Construct",
     introText:
-      "Debruyne Construct zet zich in voor hoogwaardige bouwdiensten in verschillende sectoren. Van residentiële tot industriële projecten — we combineren ervaring, precisie en moderne technieken voor duurzame resultaten. Ons team hecht waarde aan innovatie en duurzaamheid, zodat elk project de tand des tijds doorstaat.",
+      "Debruyne Construct zet zich in voor hoogwaardige bouwdiensten in verschillende sectoren. Van residentiële tot industriële projecten, we combineren ervaring, precisie en moderne technieken voor duurzame resultaten. Ons team hecht waarde aan innovatie en duurzaamheid, zodat elk project de tand des tijds doorstaat.",
 
     // Innovation Section
     innovation: "Innovatie",
@@ -80,7 +80,7 @@ const translations = {
     // Reliability Section
     reliability: "Betrouwbaarheid",
     reliabilityText:
-      "Onze reputatie is gebouwd op vertrouwen. We leveren op tijd, binnen budget en altijd met integriteit. Klanten vertrouwen op Debruyne Construct voor duurzame resultaten — structureel en professioneel.",
+      "Onze reputatie is gebouwd op vertrouwen. We leveren op tijd, binnen budget en altijd met integriteit. Klanten vertrouwen op Debruyne Construct voor duurzame resultaten, structureel en professioneel.",
 
     // Footer
     contactFooter: "Contact",
@@ -123,7 +123,7 @@ const translations = {
     // Reliability Section
     reliability: "Fiabilité",
     reliabilityText:
-      "Notre réputation repose sur la confiance. Nous livrons à temps, dans le respect du budget et toujours avec intégrité. Les clients comptent sur Debruyne Construct pour des résultats durables — structurellement et professionnellement.",
+      "Notre réputation repose sur la confiance. Nous livrons à temps, dans le respect du budget et toujours avec intégrité. Les clients comptent sur Debruyne Construct pour des résultats durables, structurellement et professionnellement.",
 
     // Footer
     contactFooter: "Contact",

@@ -13,7 +13,7 @@
     <!-- Logo -->
     <div>
       <a href="index.html">
-        <img src="Images/Logo.jpg" alt="MyCompany Logo" class="h-20 w-auto">
+        <img src="images/Logo.jpg" alt="MyCompany Logo" class="h-20 w-auto">
       </a>
     </div>
 
@@ -79,18 +79,22 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white px-8 py-6">
-    <div class="flex justify-between flex-col md:flex-row gap-4">
-      <div>
-        <h2 class="font-semibold text-lg mb-2">Contact</h2>
-        <p>Email: example@mycompany.com</p>
-        <p>Phone: +1 234 567 890</p>
+  <footer class="bg-gray-900 text-gray-300 px-8 py-10 mt-auto">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div class="text-left">
+        <h2 data-i18n="footerContactTitle" class="font-semibold text-lg mb-2 text-white">Contact</h2>
+        <p data-i18n="footerEmail">Email: info@debruyne-construct.be</p>
+        <p data-i18n="footerPhone">Phone: 059 413 411</p>
       </div>
-      <div class="text-right md:text-left">
-        <h2 class="font-semibold text-lg mb-2">Address</h2>
-        <p>123 Example Street</p>
-        <p>City, Country 12345</p>
+      <div class="text-left sm:text-right">
+        <h2 data-i18n="footerAddressTitle" class="font-semibold text-lg mb-2 text-white">Address</h2>
+        <p data-i18n="footerAddressLine1">De Middelpolder 15</p>
+        <p data-i18n="footerAddressLine2">8430 Middelkerke, Belgie</p>
+        <p data-i18n="footerAddressLine3">BE 0715 929 086</p>
       </div>
+    </div>
+    <div data-i18n="footerCopyright" class="text-center text-sm text-gray-500 mt-6 border-t border-gray-700 pt-4">
+      © 2025 Debruyne Construct. All rights reserved.
     </div>
   </footer>
 
