@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debruyne Construct</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Scroll animations */
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .slide-in-right { animation: slideInRight 1s ease-out forwards; }
+    .slide-in-left { animation: slideInLeft 1s ease-out forwards; }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gradient-to-r from-blue-50 to-white text-gray-800">
+
+  <!-- Header -->
+  <header class="relative bg-white/80 backdrop-blur-md shadow-md z-50">
+    <!-- Language Switcher (Top Right Corner) -->
+    <div id="language-switcher" class="absolute top-2 right-6 flex space-x-2 text-sm font-semibold text-gray-700"></div>
+
+    <!-- Main Header Row -->
+    <div class="flex justify-between items-center px-8 py-4">
+      <div>
+        <a href="index.html">
+          <img src="Images/Logo.jpg" alt="Debruyne Construct Logo"
+               class="h-20 w-auto transition-transform duration-300 hover:scale-105">
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-6 items-center relative">
+        <a href="about-us.html" data-i18n="about" class="text-blue-600 font-bold">About Us</a>
+        <div class="relative">
+          <button id="welding-btn" data-i18n="welding"
+                  class="flex items-center text-gray-700 hover:text-blue-600 focus:outline-none">
+            Welding
+            <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor"
+                 stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="welding-dropdown"
+               class="absolute left-0 top-full -mt-1 hidden bg-white shadow-md rounded-md py-2 w-44 z-10">
+            <a href="mig-welding.html" data-i18n="mig" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">MIG Welding</a>
+            <a href="tig-welding.html" data-i18n="tig" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">TIG Welding</a>
+            <a href="stick-welding.html" data-i18n="stick" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Stick Welding</a>
+          </div>
+        </div>
+        <a href="contact.html" data-i18n="contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+        <a href="portfolio.html" data-i18n="portfolio" class="text-gray-700 hover:text-blue-600">Portfolio</a>
+        <a href="vacancy.html" data-i18n="vacancy" class="text-gray-700 hover:text-blue-600">Vacancy</a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col space-y-1">
+        <span class="block w-6 h-0.5 bg-gray-700"></span>
+        <span class="block w-6 h-0.5 bg-gray-700"></span>
+        <span class="block w-6 h-0.5 bg-gray-700"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="about-us.html" data-i18n="about" class="block px-6 py-3 border-b text-blue-600 font-bold">About Us</a>
+      <div>
+        <button id="mobile-welding-btn" data-i18n="welding"
+                class="w-full text-left px-6 py-3 border-b flex justify-between items-center text-gray-700 hover:bg-blue-50 hover:text-blue-600 focus:outline-none">
+          Welding
+          <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-welding-dropdown" class="hidden bg-gray-50">
+          <a href="mig-welding.html" data-i18n="mig" class="block px-10 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 text-sm">MIG Welding</a>
+          <a href="tig-welding.html" data-i18n="tig" class="block px-10 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 text-sm">TIG Welding</a>
+          <a href="stick-welding.html" data-i18n="stick" class="block px-10 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 text-sm">Stick Welding</a>
+        </div>
+      </div>
+      <a href="contact.html" data-i18n="contact" class="block px-6 py-3 border-b text-gray-700 hover:bg-blue-50 hover:text-blue-600">Contact</a>
+      <a href="portfolio.html" data-i18n="portfolio" class="block px-6 py-3 border-b text-gray-700 hover:bg-blue-50 hover:text-blue-600">Portfolio</a>
+      <a href="vacancy.html" data-i18n="vacancy" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Vacancy</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative flex flex-col items-center justify-center text-center py-24 px-6 min-h-[200px] md:min-h-[400px]">
+    <div class="absolute inset-0 bg-cover bg-top filter brightness-50"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-400/10 to-transparent"></div>
+    <h1 data-i18n="heroTitle" class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg relative z-10">Debruyne Construct</h1>
+    <p data-i18n="heroText" class="mt-4 text-lg text-white max-w-xl relative z-10">Building the future with innovation, craftsmanship, and trust.</p>
+  </section>
+  <style>section .absolute.bg-cover { background-image: url('Images/Example4.jpg'); }</style>
+
+  <!-- Intro Section -->
+  <section class="text-center px-6 py-20 bg-transparent">
+    <div class="max-w-3xl mx-auto">
+      <h2 data-i18n="introTitle" class="text-3xl font-bold text-gray-800 mb-6">About Debruyne Construct</h2>
+      <p data-i18n="introText" class="text-gray-700 leading-relaxed">
+        Debruyne Construct is dedicated to providing top-quality construction services across various industries.
+        From residential to industrial projects, we combine experience, precision, and modern techniques to deliver
+        lasting results. Our team values innovation and sustainability, ensuring every project stands the test of time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Innovation Section -->
+  <section class="relative overflow-hidden py-20" style="background: linear-gradient(135deg, #1e40af 0%, #9ca3af 100%); clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 95%);">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
+      <div class="overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+        <img src="Images/Example1.jpg" alt="Image" class="w-full h-auto object-cover rounded-lg">
+      </div>
+      <div>
+        <h2 data-i18n="innovationTitle" class="text-4xl font-bold mb-4 opacity-0 fly-header-right text-white">Innovation</h2>
+        <p data-i18n="innovationText" class="text-blue-100 leading-relaxed mb-6">
+          At Debruyne Construct, innovation drives every step of our process. We implement cutting-edge techniques
+          and sustainable materials to achieve both beauty and efficiency in all our builds.
+        </p>
+        <a href="about-us.html" data-i18n="learnMore" class="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold shadow-lg hover:bg-blue-50 hover:scale-105 transition">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craftsmanship Section -->
+  <section class="relative overflow-hidden py-20 bg-transparent">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
+      <div class="md:order-2 overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105">
+        <img src="Images/Example2.jpg" alt="Image" class="w-full h-auto object-cover rounded-lg">
+      </div>
+      <div class="md:order-1">
+        <h2 data-i18n="craftsmanshipTitle" class="text-4xl font-bold mb-4 opacity-0 fly-header-left text-blue-800">Craftsmanship</h2>
+        <p data-i18n="craftsmanshipText" class="text-gray-700 leading-relaxed mb-6">
+          Our projects reflect the dedication and attention to detail that define our company.
+          Every structure is built with precision and passion, ensuring it meets the highest standards of quality.
+        </p>
+        <a href="contact.html" data-i18n="contactUs" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reliability Section -->
+  <section class="relative overflow-hidden py-20" style="background: linear-gradient(135deg, #1e40af 0%, #9ca3af 100%); clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
+      <div class="overflow-hidden shadow-lg transform transition-transform duration-500 hover:scale-105 md:order-1">
+        <img src="Images/Example3.jpg" alt="Image" class="w-full h-auto object-cover rounded-lg">
+      </div>
+      <div class="md:order-2">
+        <h2 data-i18n="reliabilityTitle" class="text-4xl font-bold mb-4 opacity-0 fly-header-right text-white">Reliability</h2>
+        <p data-i18n="reliabilityText" class="text-blue-100 leading-relaxed mb-6">
+          Our reputation is built on trust. We deliver on time, within budget, and always with integrity.
+          Clients rely on Debruyne Construct for results that endure — structurally and professionally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 px-8 py-10 mt-auto">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div class="text-left">
+        <h2 data-i18n="footerContactTitle" class="font-semibold text-lg mb-2 text-white">Contact</h2>
+        <p data-i18n="footerEmail">Email: info@debruyneconstruct.com</p>
+        <p data-i18n="footerPhone">Phone: +32 123 456 789</p>
+      </div>
+      <div class="text-left sm:text-right">
+        <h2 data-i18n="footerAddressTitle" class="font-semibold text-lg mb-2 text-white">Address</h2>
+        <p data-i18n="footerAddressLine1">123 Industrial Park</p>
+        <p data-i18n="footerAddressLine2">Ghent, Belgium</p>
+      </div>
+    </div>
+    <div data-i18n="footerCopyright" class="text-center text-sm text-gray-500 mt-6 border-t border-gray-700 pt-4">
+      © 2025 Debruyne Construct. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Mobile welding toggle
+    const mobileWeldingBtn = document.getElementById('mobile-welding-btn');
+    const mobileWeldingDropdown = document.getElementById('mobile-welding-dropdown');
+    mobileWeldingBtn.addEventListener('click', () => {
+      mobileWeldingDropdown.classList.toggle('hidden');
+      mobileWeldingBtn.querySelector('svg').classList.toggle('rotate-180');
+    });
+
+    // Desktop welding dropdown hover + click
+    const weldingBtn = document.getElementById('welding-btn');
+    const weldingDropdown = document.getElementById('welding-dropdown');
+    let dropdownOpen = false;
+    weldingBtn.addEventListener('click', () => {
+      dropdownOpen = !dropdownOpen;
+      weldingDropdown.classList.toggle('hidden', !dropdownOpen);
+    });
+    [weldingBtn, weldingDropdown].forEach(el => {
+      el.addEventListener('mouseenter', () => weldingDropdown.classList.remove('hidden'));
+      el.addEventListener('mouseleave', () => { if (!dropdownOpen) weldingDropdown.classList.add('hidden'); });
+    });
+
+    // Scroll-triggered flying headers
+    function animateOnScroll() {
+      const headers = document.querySelectorAll('.fly-header-left, .fly-header-right');
+      headers.forEach(header => {
+        const rect = header.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top < windowHeight * 0.8 && header.classList.contains('opacity-0')) {
+          if (header.classList.contains('fly-header-left')) header.classList.add('slide-in-left');
+          else header.classList.add('slide-in-right');
+          header.classList.remove('opacity-0');
+        }
+      });
+    }
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+
+  <script src="Js/translations.js"></script>
+  <script src="Js/main.js"></script>
+</body>
+</html>

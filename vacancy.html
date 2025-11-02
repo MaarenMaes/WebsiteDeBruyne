@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacancy - MyCompany</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center px-8 py-4 shadow-md relative">
+    <!-- Logo -->
+    <div>
+      <a href="index.html">
+        <img src="Images/Logo.jpg" alt="MyCompany Logo" class="h-20 w-auto">
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 items-center relative">
+      <a href="about-us.html" class="text-gray-700 hover:text-blue-600">About Us</a>
+
+      <!-- Welding Dropdown -->
+      <div class="relative dropdown">
+        <button class="flex items-center text-gray-700 hover:text-blue-600 focus:outline-none" id="welding-btn">
+          Welding
+          <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="absolute left-0 top-full -mt-1 hidden bg-white shadow-md rounded-md py-2 w-44 z-10" id="welding-dropdown">
+          <a href="mig-welding.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">MIG Welding</a>
+          <a href="tig-welding.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">TIG Welding</a>
+          <a href="stick-welding.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Stick Welding</a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+      <a href="portfolio.html" class="text-gray-700 hover:text-blue-600">Portfolio</a>
+      <a href="vacancy.html" class="text-blue-600 font-bold">Vacancy</a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col space-y-1">
+      <span class="block w-6 h-0.5 bg-gray-700"></span>
+      <span class="block w-6 h-0.5 bg-gray-700"></span>
+      <span class="block w-6 h-0.5 bg-gray-700"></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+    <a href="about-us.html" class="block px-6 py-3 border-b text-gray-700 hover:bg-blue-50 hover:text-blue-600">About Us</a>
+
+    <!-- Welding submenu -->
+    <div>
+      <button id="mobile-welding-btn" class="w-full text-left px-6 py-3 border-b flex justify-between items-center text-gray-700 hover:bg-blue-50 hover:text-blue-600 focus:outline-none">
+        Welding
+        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div id="mobile-welding-dropdown" class="hidden bg-gray-50">
+        <a href="mig-welding.html" class="block px-10 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 text-sm">MIG Welding</a>
+        <a href="tig-welding.html" class="block px-10 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 text-sm">TIG Welding</a>
+        <a href="stick-welding.html" class="block px-10 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 text-sm">Stick Welding</a>
+      </div>
+    </div>
+
+    <a href="contact.html" class="block px-6 py-3 border-b text-gray-700 hover:bg-blue-50 hover:text-blue-600">Contact</a>
+    <a href="portfolio.html" class="block px-6 py-3 border-b text-gray-700 hover:bg-blue-50 hover:text-blue-600">Portfolio</a>
+    <a href="vacancy.html" class="block px-6 py-3 text-blue-600 font-bold">Vacancy</a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center text-center p-12">
+    <h1 class="text-4xl font-semibold text-gray-800">This is the Vacancy page</h1>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white px-8 py-6">
+    <div class="flex justify-between flex-col md:flex-row gap-4">
+      <div>
+        <h2 class="font-semibold text-lg mb-2">Contact</h2>
+        <p>Email: example@mycompany.com</p>
+        <p>Phone: +1 234 567 890</p>
+      </div>
+      <div class="text-right md:text-left">
+        <h2 class="font-semibold text-lg mb-2">Address</h2>
+        <p>123 Example Street</p>
+        <p>City, Country 12345</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Mobile welding toggle
+    const mobileWeldingBtn = document.getElementById('mobile-welding-btn');
+    const mobileWeldingDropdown = document.getElementById('mobile-welding-dropdown');
+    mobileWeldingBtn.addEventListener('click', () => {
+      mobileWeldingDropdown.classList.toggle('hidden');
+      mobileWeldingBtn.querySelector('svg').classList.toggle('rotate-180');
+    });
+
+    // Desktop welding dropdown hover + click
+    const weldingBtn = document.getElementById('welding-btn');
+    const weldingDropdown = document.getElementById('welding-dropdown');
+    let dropdownOpen = false;
+
+    // Click toggles "locked open" state
+    weldingBtn.addEventListener('click', () => {
+      dropdownOpen = !dropdownOpen;
+      weldingDropdown.classList.toggle('hidden', !dropdownOpen);
+    });
+
+    // Hover on button or dropdown shows menu
+    [weldingBtn, weldingDropdown].forEach(el => {
+      el.addEventListener('mouseenter', () => weldingDropdown.classList.remove('hidden'));
+      el.addEventListener('mouseleave', () => {
+        if (!dropdownOpen) weldingDropdown.classList.add('hidden');
+      });
+    });
+  </script>
+
+</body>
+</html>
